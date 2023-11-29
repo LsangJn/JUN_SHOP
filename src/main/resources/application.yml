@@ -1,0 +1,21 @@
+spring:
+  h2:
+    console:
+      enabled: true # H2 콘솔 활성화 여부 설정
+      path: /h2-console # H2 콘솔 경로 설정
+  datasource:
+    url: jdbc:h2:mem:testdb # H2 메모리 데이터베이스 URL 설정
+    username: sa # 데이터베이스 사용자 이름
+    password:  # 데이터베이스 사용자 비밀번호
+    driver-class-name: org.h2.Driver # H2 JDBC 드라이버 클래스 설정
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect # H2 데이터베이스 플랫폼 설정
+    hibernate:
+      show_sql : true
+      format_sql : true
+      ddl-auto: create
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    # org.hibernate.type: trace
